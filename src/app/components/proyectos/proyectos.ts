@@ -22,7 +22,7 @@ export class Proyectos implements AfterViewInit, OnDestroy {
     {
       nombre: 'SISTEMA_CLINICO',
       categoria: 'GESTIÓN CLÍNICA',
-      imagen: '/img/clinica.png',
+      imagen: '/img/dash_clinica.png',
       imageAlt: 'Vista del sistema de gestión clínica',
     },
     {
