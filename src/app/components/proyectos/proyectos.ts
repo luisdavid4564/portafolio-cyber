@@ -22,17 +22,17 @@ export class Proyectos implements AfterViewInit, OnDestroy {
     {
       nombre: 'SISTEMA_CLINICO',
       categoria: 'GESTIÓN CLÍNICA',
-      imagen: '/img/dash_clinica.png',
+      imagen: '/img/dash_clinica1.png',
       imageAlt: 'Vista del sistema de gestión clínica',
     },
     {
       nombre: 'COMPRA Y VENTA',
       categoria: 'PUNTO DE VENTA E INVENTARIO',
-      imagen: '/img/compra-venta.png',
+      imagen: '/img/compra-venta1.png',
       imageAlt: 'Vista del sistema de compra, venta e inventario',
     },
     {
-      nombre: 'MUNDO_CRECE',
+      nombre: 'MIND_CHECK',
       categoria: 'ESTIMULACIÓN TEMPRANA',
       imagen: '/img/mundo-crece.png',
       imageAlt: 'Vista del proyecto Mundo Crece',

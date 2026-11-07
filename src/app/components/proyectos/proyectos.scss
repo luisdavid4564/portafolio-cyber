@@ -55,6 +55,13 @@
   transition: filter 0.3s ease;
 }
 
+.proyectos__card:first-child .proyectos__image,
+.proyectos__card:nth-child(2) .proyectos__image,
+.proyectos__card:nth-child(3) .proyectos__image,
+.proyectos__card:nth-child(4) .proyectos__image {
+  object-position: center;
+}
+
 .proyectos__card:hover .proyectos__image {
   filter: grayscale(0) contrast(1.1);
 }
