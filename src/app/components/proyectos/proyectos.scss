@@ -1,0 +1,150 @@
+.proyectos {
+  position: relative;
+  border-top: 1px solid var(--line);
+  padding: 1.5rem clamp(1.5rem, 4.45vw, 4rem) 3rem;
+}
+
+.proyectos__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.proyectos__index,
+.proyectos__heading {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.proyectos__index {
+  color: var(--accent);
+}
+
+.proyectos__heading {
+  color: var(--ink);
+}
+
+.proyectos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.proyectos__card {
+  min-width: 0;
+  border: 1px solid var(--line);
+}
+
+.proyectos__image-frame {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--line);
+}
+
+.proyectos__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  filter: grayscale(1) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.proyectos__card:hover .proyectos__image {
+  filter: grayscale(0) contrast(1.1);
+}
+
+.proyectos__details {
+  display: flex;
+  min-height: 4.4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.9rem;
+}
+
+.proyectos__copy {
+  min-width: 0;
+}
+
+.proyectos__name {
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.proyectos__category {
+  margin-top: 0.25rem;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  opacity: 0.6;
+}
+
+.proyectos__arrow {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.proyectos__mark {
+  position: absolute;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.proyectos__mark--left-top {
+  top: 4.2rem;
+  left: 0.5rem;
+}
+
+.proyectos__mark--left-bottom {
+  bottom: 1.1rem;
+  left: 0.5rem;
+}
+
+.proyectos__mark--right-top {
+  top: 4.2rem;
+  right: 0.5rem;
+}
+
+.proyectos__mark--right-bottom {
+  right: 0.5rem;
+  bottom: 1.1rem;
+}
+
+@media (max-width: 1099px) {
+  .proyectos__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .proyectos {
+    padding-inline: 1.25rem;
+  }
+
+  .proyectos__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proyectos__image {
+    transition: none;
+  }
+}

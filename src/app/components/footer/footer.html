@@ -1,0 +1,72 @@
+<section class="stack" id="stack" aria-labelledby="stack-heading">
+  <header class="stack__header">
+    <span class="stack__index">/07</span>
+    <h2 class="stack__heading" id="stack-heading">STACK QUE USO</h2>
+  </header>
+
+  <div class="stack__marquee" aria-label="Tecnologías utilizadas">
+    <div class="stack__track">
+      <div class="stack__group">
+        @for (item of stack; track item.nombre) {
+          <div class="stack__entry">
+            <div class="stack__item">
+              @if (item.path) {
+                <svg class="stack__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path [attr.d]="item.path"></path>
+                </svg>
+              }
+              <span>{{ item.nombre }}</span>
+            </div>
+            <span class="stack__separator" aria-hidden="true">/</span>
+          </div>
+        }
+      </div>
+      <div class="stack__group" aria-hidden="true">
+        @for (item of stack; track item.nombre) {
+          <div class="stack__entry">
+            <div class="stack__item">
+              @if (item.path) {
+                <svg class="stack__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path [attr.d]="item.path"></path>
+                </svg>
+              }
+              <span>{{ item.nombre }}</span>
+            </div>
+            <span class="stack__separator" aria-hidden="true">/</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="site-footer__wordmark" href="#top">LUIS_DAVID</a>
+      <p>© 2026 LUIS DAVID REGALADO SOSA</p>
+      <p>TODOS LOS DERECHOS RESERVADOS</p>
+    </div>
+
+    <nav class="site-footer__column" aria-label="Navegación">
+      <h2 class="site-footer__title">NAVEGACIÓN</h2>
+      <a href="#work">Work</a>
+      <a href="#stack">Services</a>
+      <a href="#about">About</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <nav class="site-footer__column" aria-label="Redes">
+      <h2 class="site-footer__title">REDES</h2>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="mailto:luisregalado573@gmail.com">Email</a>
+    </nav>
+
+    <div class="site-footer__column site-footer__node">
+      <h2 class="site-footer__title">NODO GLOBAL</h2>
+      <p><span class="site-footer__node-dot" aria-hidden="true"></span>LIMA, PE</p>
+      <p class="site-footer__coordinates">12.0464° S / 77.0428° W</p>
+    </div>
+  </div>
+</footer>

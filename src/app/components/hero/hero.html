@@ -1,0 +1,91 @@
+<div class="hero" id="inicio">
+  <header class="hero__header">
+    <a class="hero__mobile-logo" href="#inicio" (click)="closeMenu()">LUIS_DAVID</a>
+    <nav class="hero__nav" aria-label="Navegación principal">
+      <a href="#work">WORK</a>
+      <a href="#stack">SERVICES</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contacto">CONTACT</a>
+    </nav>
+
+    <div class="hero__header-actions">
+      <p class="hero__time" aria-live="off">
+        <span>SYS.TIME</span>
+        <time>{{ currentTime }}</time>
+      </p>
+      <a class="hero__button hero__button--primary" href="#contacto">
+        INICIAR PROYECTO <span class="hero__arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <button
+      class="hero__menu-toggle"
+      type="button"
+      [attr.aria-expanded]="open()"
+      aria-controls="hero-mobile-menu"
+      (click)="toggleMenu()"
+    >
+      {{ open() ? 'CERRAR' : 'MENÚ' }}
+    </button>
+  </header>
+
+  @if (open()) {
+    <nav class="hero__mobile-menu" id="hero-mobile-menu" aria-label="Navegación móvil">
+      <a href="#work" (click)="closeMenu()">WORK <span aria-hidden="true">↗</span></a>
+      <a href="#stack" (click)="closeMenu()">SERVICES <span aria-hidden="true">↗</span></a>
+      <a href="#about" (click)="closeMenu()">ABOUT <span aria-hidden="true">↗</span></a>
+      <a href="#contacto" (click)="closeMenu()">CONTACT <span aria-hidden="true">↗</span></a>
+    </nav>
+  }
+
+  <main class="hero__main" id="top">
+    <section class="hero__copy" aria-labelledby="hero-title">
+      <p class="hero__index">/01</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__title-mask"><span #titleLine class="hero__title-line">LUIS DAVID</span></span>
+        <span class="hero__title-mask"><span #titleLine class="hero__title-line">DESARROLLADOR</span></span>
+        <span class="hero__title-mask"><span #titleLine class="hero__title-line">FULL-STACK</span></span>
+      </h1>
+      <p class="hero__tagline">LARAVEL. ANGULAR. SISTEMAS REALES.</p>
+      <div class="hero__actions">
+        <a class="hero__button hero__button--primary" href="#work">
+          VER PROYECTOS <span class="hero__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="hero__button hero__button--text" href="#contacto">CONTACTO</a>
+      </div>
+    </section>
+
+    <div class="hero__visual-wrap">
+      <div class="hero__visual" role="img" aria-label="Marco visual para proyectos">
+        <div class="hero__render-status" aria-hidden="true">
+          <span>&gt; RENDERING</span>
+          <span>83%</span>
+        </div>
+        <div class="hero__grid" aria-hidden="true">
+          @for (cell of gridCells; track $index) {
+            <span
+              class="hero__grid-cell"
+              [style.background-color]="cell.color"
+              [style.opacity]="cell.opacity"
+            ></span>
+          }
+        </div>
+        <p class="hero__coordinates" aria-hidden="true">
+          <span>X_36.1749</span>
+          <span>Y_-86.7676</span>
+          <span>Z_46.6027</span>
+        </p>
+        <span class="hero__mark hero__mark--top-left" aria-hidden="true">+</span>
+        <span class="hero__mark hero__mark--top-right" aria-hidden="true">+</span>
+        <span class="hero__mark hero__mark--bottom-left" aria-hidden="true">+</span>
+        <span class="hero__mark hero__mark--bottom-right" aria-hidden="true">+</span>
+      </div>
+      <p class="hero__scene-id" aria-hidden="true">//SCN_01</p>
+    </div>
+  </main>
+
+  <footer class="hero__terminal" aria-label="Estado de conexión">
+    <span class="hero__terminal-status">● CONNECTION SECURE</span>
+    <span class="hero__terminal-access">&gt; ACCESS GRANTED_</span>
+    <span class="hero__terminal-node">SCN: 0007&nbsp; NODE: LUIS_01</span>
+  </footer>
+</div>

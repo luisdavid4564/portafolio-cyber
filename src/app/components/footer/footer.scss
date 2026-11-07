@@ -1,0 +1,240 @@
+.stack {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem clamp(1.5rem, 4.45vw, 4rem) 2rem;
+}
+
+.stack__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.stack__index,
+.stack__heading {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.stack__index {
+  color: var(--accent);
+}
+
+.stack__heading {
+  color: var(--ink);
+}
+
+.stack__marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-block: 24px;
+}
+
+.stack__track,
+.stack__group,
+.stack__entry,
+.stack__item {
+  display: flex;
+  align-items: center;
+}
+
+.stack__track {
+  width: max-content;
+  animation: stack-marquee 60s linear infinite;
+}
+
+.stack__marquee:hover .stack__track {
+  animation-play-state: paused;
+}
+
+.stack__group {
+  flex: 0 0 auto;
+}
+
+.stack__entry {
+  gap: 40px;
+  padding-inline: 40px;
+}
+
+.stack__item {
+  gap: 12px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0.7;
+  transition: color 200ms ease;
+}
+
+.stack__separator {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 20px;
+}
+
+.stack__item:hover {
+  color: var(--accent);
+}
+
+.stack__icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  fill: currentColor;
+}
+
+.stack__item:not(:has(.stack__icon))::before {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  content: '';
+}
+
+@keyframes stack-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem clamp(1.5rem, 4.45vw, 4rem) 60px;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.site-footer__brand,
+.site-footer__column {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-footer__wordmark {
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 0.9;
+  text-decoration: none;
+}
+
+.site-footer__brand p,
+.site-footer__node p {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.site-footer__title {
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.site-footer__column > a {
+  position: relative;
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.site-footer__column > a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.site-footer__column > a:hover::after {
+  transform: scaleX(1);
+}
+
+.site-footer__node > p:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-footer__node-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+}
+
+.site-footer__coordinates {
+  white-space: nowrap;
+}
+
+.site-footer__column > a:focus-visible,
+.site-footer__wordmark:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 899px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .site-footer {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack__track {
+    width: auto;
+    flex-wrap: wrap;
+    animation: none;
+  }
+
+  .stack__group:first-child {
+    flex-wrap: wrap;
+  }
+
+  .stack__group[aria-hidden='true'] {
+    display: none;
+  }
+
+  .stack__item,
+  .site-footer__column > a::after {
+    transition: none;
+  }
+}

@@ -1,0 +1,61 @@
+<section class="contacto" id="contacto" aria-label="Contacto y disponibilidad">
+  <article class="contacto__column contacto__intro">
+    <span class="contacto__index">/04</span>
+    <h2 class="contacto__hero-title">TRABAJEMOS JUNTOS</h2>
+    <p class="contacto__description">
+      Sistemas web a medida con Laravel y Angular. Cuéntame tu idea.
+    </p>
+    <a class="contacto__button" href="mailto:TU_CORREO@ejemplo.com">
+      INICIAR PROYECTO <span aria-hidden="true">↗</span>
+    </a>
+  </article>
+
+  <article #stack class="contacto__column contacto__stack" aria-labelledby="stack-title">
+    <span class="contacto__index">/05</span>
+    <h2 class="contacto__column-title" id="stack-title">STACK STATUS</h2>
+
+    <ul class="contacto__skills">
+      @for (skill of stackSkills; track skill.name) {
+        <li class="contacto__skill">
+          <span class="contacto__skill-name">{{ skill.name }}</span>
+          <span
+            class="contacto__bar"
+            role="progressbar"
+            [attr.aria-label]="skill.name"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [attr.aria-valuenow]="skill.value"
+          >
+            <span class="contacto__bar-fill" [style.transform]="'scaleX(' + skill.value / 100 + ')'"></span>
+          </span>
+          <span class="contacto__skill-value">{{ skill.value }}%</span>
+        </li>
+      }
+    </ul>
+
+    <p class="contacto__availability">
+      <span>DISPONIBLE PARA PROYECTOS</span>
+      <span class="contacto__availability-dot" aria-hidden="true"></span>
+    </p>
+  </article>
+
+  <article class="contacto__column contacto__links" aria-labelledby="contact-title">
+    <span class="contacto__index">/06</span>
+    <h2 class="contacto__column-title" id="contact-title">CONTACTO</h2>
+    <p class="contacto__description">Escríbeme por cualquiera de estos canales.</p>
+
+    <nav class="contacto__channels" aria-label="Canales de contacto">
+      <a href="mailto:TU_CORREO@ejemplo.com">
+        EMAIL <span aria-hidden="true">↗</span>
+      </a>
+      <a href="#">
+        GITHUB <span aria-hidden="true">↗</span>
+      </a>
+      <a href="#">
+        LINKEDIN <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="contacto__stripe" aria-hidden="true"></div>
+  </article>
+</section>

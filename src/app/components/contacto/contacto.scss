@@ -1,0 +1,223 @@
+.contacto {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  padding: 2rem clamp(1.5rem, 4.45vw, 4rem) 3rem;
+}
+
+.contacto__column {
+  min-width: 0;
+  padding: 0 clamp(1.25rem, 3vw, 3rem);
+  border-left: 1px solid var(--line);
+}
+
+.contacto__column:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.contacto__column:last-child {
+  padding-right: 0;
+}
+
+.contacto__index {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.contacto__hero-title {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.contacto__column-title {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.contacto__description {
+  max-width: 32ch;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.contacto__intro .contacto__description {
+  max-width: 38ch;
+}
+
+.contacto__button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.contacto__button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contacto__button:active {
+  transform: translateY(1px);
+}
+
+.contacto__button span,
+.contacto__channels a span {
+  color: var(--accent);
+}
+
+.contacto__button:hover span {
+  color: var(--bg);
+}
+
+.contacto__skills {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacto__skill {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, 0.8fr) minmax(2rem, 1fr) 2.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.contacto__bar {
+  height: 4px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.contacto__bar-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left center;
+}
+
+.contacto__skill-value {
+  text-align: right;
+}
+
+.contacto__availability {
+  display: flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--lime);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.contacto__availability-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  background: var(--ink);
+}
+
+.contacto__channels {
+  margin-top: 1.5rem;
+}
+
+.contacto__channels a {
+  display: flex;
+  min-height: 2.7rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contacto__channels a:hover {
+  color: var(--accent);
+}
+
+.contacto__stripe {
+  height: 0.8rem;
+  margin-top: 1.5rem;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 4px,
+    var(--line) 4px,
+    var(--line) 5px
+  );
+}
+
+.contacto__button:focus-visible,
+.contacto__channels a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 899px) {
+  .contacto {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 1.25rem;
+  }
+
+  .contacto__column,
+  .contacto__column:first-child,
+  .contacto__column:last-child {
+    padding: 1.5rem 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .contacto__column:first-child {
+    border-top: 0;
+  }
+
+  .contacto__hero-title {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contacto__button {
+    transition: none;
+  }
+}

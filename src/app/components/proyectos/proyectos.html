@@ -1,0 +1,33 @@
+<section #section class="proyectos" id="work" aria-labelledby="proyectos-heading">
+  <span class="proyectos__mark proyectos__mark--left-top" aria-hidden="true">+</span>
+  <span class="proyectos__mark proyectos__mark--left-bottom" aria-hidden="true">+</span>
+  <span class="proyectos__mark proyectos__mark--right-top" aria-hidden="true">+</span>
+  <span class="proyectos__mark proyectos__mark--right-bottom" aria-hidden="true">+</span>
+
+  <header class="proyectos__header">
+    <span class="proyectos__index">/03</span>
+    <h2 class="proyectos__heading" id="proyectos-heading">PROYECTOS SELECCIONADOS</h2>
+  </header>
+
+  <div class="proyectos__grid">
+    @for (proyecto of proyectos; track proyecto.nombre) {
+      <article class="proyectos__card">
+        <div class="proyectos__image-frame">
+          <img
+            class="proyectos__image"
+            [src]="proyecto.imagen"
+            [alt]="proyecto.imageAlt"
+            loading="lazy"
+          />
+        </div>
+        <div class="proyectos__details">
+          <div class="proyectos__copy">
+            <h3 class="proyectos__name">{{ proyecto.nombre }}</h3>
+            <p class="proyectos__category">{{ proyecto.categoria }}</p>
+          </div>
+          <span class="proyectos__arrow" aria-hidden="true">↗</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>
