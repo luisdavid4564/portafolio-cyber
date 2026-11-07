@@ -33,7 +33,7 @@ export class Proyectos implements AfterViewInit, OnDestroy {
     },
     {
       nombre: 'MIND_CHECK',
-      categoria: 'ESTIMULACIÓN TEMPRANA',
+      categoria: 'SALUD MENTAL',
       imagen: '/img/mundo-crece.png',
       imageAlt: 'Vista del proyecto Mundo Crece',
     },
